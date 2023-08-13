@@ -1,0 +1,44 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 40px 0px 40px;
+    margin-bottom: 90px;
+    h1 {
+        color: var(--color-primary, #F1CDB3);
+        font-family: Georgia;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 110%; /* 35.2px */
+        letter-spacing: 1.92px;
+        margin-bottom: 10px;
+    }
+    p {
+        color: var(--color-light-xl, #FFF);
+        font-family: Arial;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 1.3px;
+    }
+}
+.nav {
+    display: flex;
+    align-items: center;
+    ul{
+        display: flex;
+        flex-direction: row;
+        gap: 35px;
+        list-style-type: none;
+    }
+    a {
+        cursor: pointer;
+        color: var(--color-light-s, #FAFAFA);
+        font-family: Arial;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%; /* 24px */
+    }
+}

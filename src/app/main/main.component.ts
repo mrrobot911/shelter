@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { products } from '../shelterHelp';
+import { pets, products } from '../shelterHelp';
 
 @Component({
   selector: 'shelter-main',
@@ -8,4 +8,5 @@ import { products } from '../shelterHelp';
 })
 export class MainComponent {
   products = [...products];
+  pets = [...pets];
 }

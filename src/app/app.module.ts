@@ -6,21 +6,29 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
-import { RouterModule } from '@angular/router';
+import { PetsComponent } from './pets/pets.component';
+import { ExtraOptions, RouterModule } from '@angular/router';
 
+const routerOptions: ExtraOptions = {
+  useHash: false,
+  anchorScrolling: 'enabled',
+  onSameUrlNavigation: 'reload'
+};
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MainComponent,
-    FooterComponent
+    FooterComponent,
+    PetsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([
       { path: '', component: MainComponent },
-    ])
+      { path: 'pets', component: PetsComponent },
+    ], routerOptions)
   ],
   providers: [],
   bootstrap: [AppComponent]

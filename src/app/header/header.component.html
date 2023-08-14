@@ -5,10 +5,10 @@
     </div>
     <nav class="nav">
         <ul>
-            <li><a>About the shelter</a></li>
-            <li><a>Our pets</a></li>
-            <li><a>Help the shelter</a></li>
-            <li><a>Contacts</a></li>
+            <li><a [routerLink]="['/']">About the shelter</a></li>
+            <li><a [routerLink]="['/pets']">Our pets</a></li>
+            <li><a [routerLink]="['/']" fragment = "1" >Help the shelter</a></li>
+            <li><a [routerLink]="['/']" fragment = "2">Contacts</a></li>
         </ul>
     </nav>
 </header>

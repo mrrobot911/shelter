@@ -1,0 +1,13 @@
+<section class="main friends">
+    <h3>Our friends who are looking for a house</h3>
+    <div class="friends-pets">
+        <div class="pet-card" *ngFor="let pet of pets">
+            <img [src]="pet.image"/>
+            <p>{{pet.name}}</p>
+            <button>Learn more</button>
+        </div>
+    </div>
+    <div class="pagination">
+        <button class="list"*ngFor="let btn of buttons">{{btn}}</button>
+    </div>
+</section>

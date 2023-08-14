@@ -10,15 +10,28 @@
 </section>
 <section class="main friends">
     <h3>Our friends who are looking for a house</h3>
-    <div>
-
+    <div class="friends-pets">
+        <div class="friends-btn">
+            <button>&#8592;</button>
+        </div>
+        <div class="pet-card" *ngFor="let pet of pets | slice: 0:3">
+            <img [src]="pet.image"/>
+            <p>{{pet.name}}</p>
+            <button>Learn more</button>
+        </div>
+        <div class="friends-btn">
+            <button>&#8594;</button>
+        </div>
     </div>
     <button class="my-button">Get to know the rest</button>
 </section>
-<section class="main help">
+<section class="main help" id="1">
     <h3>How you can help our shelter</h3>
-    <div class="help-container" *ngFor="let product of products">
-        <div><div [innerHTML]="product.image"></div> <span> {{product.name}} </span></div>
+    <div class="help-container">
+        <div class="help-item" *ngFor="let product of products">
+            <img [src]="product.image" [alt]="product.name"/> 
+            <span> {{product.name}} </span>
+        </div>
     </div>
 </section>
 <section class="main donation">
@@ -33,5 +46,4 @@
             <p>Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
         </div>
     </div>
-
 </section>

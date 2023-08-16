@@ -1,4 +1,4 @@
-<header class="header-container">
+<header [ngClass]="flag ? 'header-container header-font2' : 'header-container header-font'">
     <div>
         <h1>Cozy House</h1>
         <p>Shelter for pets in Boston</p>
@@ -12,4 +12,3 @@
         </ul>
     </nav>
 </header>
-

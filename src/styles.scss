@@ -56,6 +56,7 @@ html {
     --color-light-s: #FAFAFA;
     --color-dark-s: #CDCDCD;
     --color-dark-3-xl: #292929;
+    --color-primary-light: #FDDCC4;
   }
   @font-face {
     font-family: "Arial";
@@ -76,4 +77,8 @@ html {
   padding: 15px 45px;
   background-color: #F1CDB3;
   border-radius: 100px;
+  transition: all 0.4s ease-in-out;
+}
+.my-button:hover {
+  background-color: var(--color-primary-light, #FDDCC4);
 }

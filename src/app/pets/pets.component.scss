@@ -25,12 +25,9 @@
     border-radius: 100px;
     background: var(--color-primary, #F1CDB3);
 }
-.pagination {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
 .friends-pets {
+    height: 950px;
+    width: 1200px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -61,5 +58,24 @@
         gap: 10px;
         border-radius: 100px;
         border: 2px solid #F1CDB3;
+        transition: all 0.5s ease-in-out;
+    }
+    button:hover {
+        border: 2px solid #FDDCC4;
+        background: var(--color-primary-light, #FDDCC4);
+    }
+}
+@media (max-width: 1220px) {
+    .friends-pets {
+        height: 1365px;
+        width: 580px;
+        flex-direction: row;
+    }
+}
+@media (max-width: 620px) {
+    .friends-pets {
+        height: 1365px;
+        width: 270px;
+        flex-direction: column;
     }
 }

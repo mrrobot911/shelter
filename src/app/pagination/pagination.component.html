@@ -1,0 +1,29 @@
+<div class="pagination">
+    <button class="pagination__button"
+        [disabled]="currentPage === 1"
+        (click)="onFirstPage()"
+    >
+        <<
+    </button>
+    <button class="pagination__button"
+        [disabled]="currentPage === 1"
+        (click)="onPreviousPage()"
+    >
+        <
+    </button>
+    <p class="pagination__page-active">
+      {{currentPage}}
+    </p>
+    <button class="pagination__button"
+        [disabled]="currentPage === allPagesNumber"
+        (click)="onNextPage()"
+    >
+        >
+    </button>
+    <button class="pagination__button"
+        [disabled]="currentPage === allPagesNumber"
+        (click)="onLastPage()"
+    >
+        >>
+    </button>
+  </div>

@@ -1,6 +1,7 @@
 .footer {
     background: radial-gradient(549.89% 73.65% at 5.73% 50.00%, #513D2F 0%, #1A1A1C 100%), url(/assets/img/noise_transparent@2x.png);
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     padding: 40px 40px 0px 40px;
     background-position: center center;
@@ -26,9 +27,38 @@
         letter-spacing: 1.2px;
         gap:20px;
     }
+    svg {
+        min-width: 22px;
+    }
+}
+.footer-text {
+    display: flex;
+    flex-direction: row;
+    flex: 0 60%;
+    justify-content: space-between;
 }
 .footer-links {
     display: flex;
     flex-direction: column;
     gap:40px;
+}
+@media (max-width: 1230px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 65px;
+    }
+    img {
+        width: 300px;
+        height: 310px;
+    }
+    .footer-text {
+        gap:100px;
+    }
+}
+@media (max-width: 590px) {
+    .footer-text {
+        flex-direction: column;
+        gap:40px;
+    }
 }

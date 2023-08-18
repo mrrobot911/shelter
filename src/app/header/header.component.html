@@ -12,6 +12,14 @@
         </ul>
     </nav>
     <div class="burger">
-        <button></button>
+        <button [ngClass]="{transformed: burger}"(click)="clickBurger()"><span></span></button>
+        <div class="burger-container" *ngIf="burger">
+            <ul class="burger-menu">
+                <li><a [routerLink]="['/']" (click)="clickBurger()">About the shelter</a></li>
+                <li><a (click)="clickBurger()" [routerLink]="['/pets']" >Our pets</a></li>
+                <li><a [routerLink]="['/']" fragment = "1" (click)="clickBurger()">Help the shelter</a></li>
+                <li><a [routerLink]="['/']" fragment = "2" (click)="clickBurger()">Contacts</a></li>
+            </ul>
+        </div>
     </div>
 </header>

@@ -8,11 +8,14 @@ import { FooterComponent } from './footer/footer.component';
 import { PetsComponent } from './pets/pets.component';
 import { ExtraOptions, RouterModule } from '@angular/router';
 import { PaginationComponent } from './pagination/pagination.component';
+import { ModalComponentComponent } from './shared/components/modal-component/modal-component.component';
 
 const routerOptions: ExtraOptions = {
   useHash: false,
   anchorScrolling: 'enabled',
-  onSameUrlNavigation: 'reload'
+  onSameUrlNavigation: 'reload',
+  scrollPositionRestoration: "enabled",
+  scrollOffset: [0, 0],
 };
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ const routerOptions: ExtraOptions = {
     MainComponent,
     FooterComponent,
     PetsComponent,
-    PaginationComponent
+    PaginationComponent,
+    ModalComponentComponent
   ],
   imports: [
     BrowserModule,

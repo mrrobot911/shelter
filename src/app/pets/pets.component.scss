@@ -40,6 +40,7 @@
     flex-direction: column;
     gap: 30px;
     justify-content: center;
+    transition: all 0.5s ease-in-out;
     p {
         color: var(--color-dark-l, #545454);
         text-align: center;
@@ -60,8 +61,16 @@
         border: 2px solid #F1CDB3;
         transition: all 0.5s ease-in-out;
     }
+}
+.pet-card:hover {
+    scale: 1.15;
+    cursor: pointer;
+    button {
+        border: 2px solid #F1CDB3;
+        background: var(--color-primary, #F1CDB3);
+    }
     button:hover {
-        border: 2px solid #FDDCC4;
+        border: 2px solid #F1CDB3;
         background: var(--color-primary-light, #FDDCC4);
     }
 }

@@ -1,13 +1,21 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { pets } from '../shelterHelp';
 import { Shuffle } from '../utils/shuffle';
+import { ModalServiceService } from '../shared/services/modal-service.service';
+import { Subscription } from 'rxjs';
+import { Pets } from 'src/app/shelterHelp';
 
 @Component({
   selector: 'shelter-pets',
   templateUrl: './pets.component.html',
   styleUrls: ['./pets.component.scss']
 })
-export class PetsComponent {
+export class PetsComponent implements OnInit, OnDestroy {
+  constructor(private modalService: ModalServiceService) { }
+  @ViewChild('modal2', { read: ViewContainerRef })
+  entry!: ViewContainerRef;
+  sub!: Subscription;
+
   pets = [...pets];
   displayedData: typeof pets = [];
   shuffledData: typeof pets = [];
@@ -15,7 +23,17 @@ export class PetsComponent {
   itemsPerPage = 1;
   getScreenWidth = 0;
 
-  constructor(){
+  createModal(pet:Pets) {
+    this.sub = this.modalService
+      .openModal(this.entry, pet)
+      .subscribe((v) => {
+        //your logic
+      });
+  }
+  ngOnDestroy(): void {
+    if (this.sub) this.sub.unsubscribe();
+  }
+  ngOnInit(){
     this.getScreenWidth = window.innerWidth;
     this.shuffledData = Shuffle(this.pets);
     this.displayedData = this.dataWidth();

@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: space-between;
     margin: 0px 40px;
+    gap: 100px;
     h2 {
         color: var(--color-light-xl);
         font-family: Georgia;
@@ -87,8 +88,8 @@
 .friends-pets {
     display: flex;
     flex-direction: row;
-    gap: 90px;
     margin: 60px 0px;
+    gap: 20px;
 }
 .friends-btn {
     display: flex;
@@ -107,17 +108,23 @@
         border: 2px solid #FDDCC4;
         background: var(--color-primary-light, #FDDCC4);
     }
-
+}
+.pet-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 990px;
+    height: 435px;
+    overflow-x: hidden;
+    position: relative;
 }
 .pet-container {
     display: flex;
     flex-direction: row;
-    width: 990px;
     gap: 90px;
-    overflow-x: hidden;
+    position: absolute;
+    transition: all .5s ease-in-out;
 }
 .pet-card {
-    height: 435px;
     min-width: 270px;
     display: flex;
     flex-direction: column;
@@ -169,6 +176,7 @@
     max-width: 1030px;
     gap: 120px;
     flex-wrap: wrap;
+    justify-content: center;
     .help-item {
         display: flex;
         flex-direction: column;
@@ -242,5 +250,32 @@
         font-style: italic;
         font-weight: 400;
         line-height: 18px; /* 150% */
+    }
+}
+@media (max-width: 1200px) {
+    .pet-wrapper {
+        width: 580px;
+    }
+    .pet-container {
+        gap: 40px;
+    }
+    .hero {
+        flex-direction: column;
+    }
+    .about {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 768px) {
+    .donation-container {
+        flex-direction: column;
+    }
+}
+@media (max-width: 760px) {
+    .pet-wrapper {
+        width: 270px;
+    }
+    .pet-container {
+        gap: 40px;
     }
 }

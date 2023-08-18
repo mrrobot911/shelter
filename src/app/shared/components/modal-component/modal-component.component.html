@@ -1,0 +1,16 @@
+<div class="modal-overlay" (click)="closeMe()"></div>
+<div class="modal-container">
+    <img [src]="img" [alt]="name"/>
+    <div class="modal-data">
+        <h3>{{name}}</h3>
+        <h4>{{breed}}</h4>
+        <p>{{text}}</p>
+        <ul>
+            <li><h5>Age: </h5><p>{{age}}</p></li>
+            <li><h5>Inoculations: </h5><p>{{inoculations}}</p></li>
+            <li><h5>Diseases: </h5><p>{{diseases}}</p></li>
+            <li><h5>Parasites: </h5><p>{{parasites}}</p></li>
+        </ul>
+        <button (click)="closeMe()">&#215;</button>
+    </div>
+</div>

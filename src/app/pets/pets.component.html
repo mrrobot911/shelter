@@ -1,16 +1,17 @@
 <shelter-header></shelter-header>
+<div #modal2></div> 
 <section class="main friends">
     <h3>Our friends who are looking for a house</h3>
     <div class="friends-pets">
         <div class="pet-card" *ngFor="let pet of displayedData | slice:0:4">
             <img [src]="pet.image"/>
             <p>{{pet.name}}</p>
-            <button>Learn more</button>
+            <button (click)="createModal(pet)">Learn more</button>
         </div>
         <div class="pet-card" *ngFor="let pet of displayedData | slice:4:8">
             <img [src]="pet.image"/>
             <p>{{pet.name}}</p>
-            <button>Learn more</button>
+            <button (click)="createModal(pet)">Learn more</button>
         </div>
     </div>
     <shelter-pagination [allPagesNumber]="allPages" (changePage)="onPageChange($event)"></shelter-pagination>

@@ -4,7 +4,7 @@
         <div class="hero-container">
             <h2>Not only people need a house</h2>
             <p>We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
-            <button class="my-button">Make a friend</button>
+            <button class="my-button" [routerLink]="['/']" fragment = "3" >Make a friend</button>
         </div>
         <img src="/assets/img/start-screen-puppy.png" alt="щенок" />
     </section>
@@ -19,24 +19,27 @@
         <p>We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including psychologically) and well. We are supported by 87 volunteers and 28 employees of various skill levels. About 12% of the animals are taken by the shelter staff. Taking care of the animals, they become attached to the pets and would hardly ever leave them alone.</p>
     </div>
 </section>
-<section class="main friends">
+<div #modal></div> 
+<section class="main friends" id="3">
     <h3>Our friends who are looking for a house</h3>
     <div class="friends-pets">
         <div class="friends-btn">
-            <button>&#8592;</button>
+            <button (click)="clickLeft()">&#8592;</button>
         </div>
-        <div class="pet-container">
-            <div class="pet-card" *ngFor="let pet of pets">
-                <img [src]="pet.image"/>
-                <p>{{pet.name}}</p>
-                <button>Learn more</button>
+        <div class="pet-wrapper">
+            <div class="pet-container" [style.left]="left">
+                <div class="pet-card" *ngFor="let pet of pets">
+                    <img [src]="pet.image"/>
+                    <p>{{pet.name}}</p>
+                    <button (click)="createModal(pet)">Learn more</button>
+                </div>
             </div>
         </div>
         <div class="friends-btn">
-            <button>&#8594;</button>
+            <button (click)="clickRight()">&#8594;</button>
         </div>
     </div>
-    <button class="my-button">Get to know the rest</button>
+    <button class="my-button" (click)="petsLink()">Get to know the rest</button>
 </section>
 <section class="main help" id="1">
     <h3>How you can help our shelter</h3>
